@@ -2,8 +2,9 @@ import React from 'react';
 import {graphql} from 'react-apollo';
 
 import CurrentUser from "../queries/CurrentUser";
+import SignOut from "../queries/SignOut";
 
-const App = ({data: {loading, user}}) => {
+const App = ({data: {loading, user}, mutate}) => {
     return loading ? (
         <div className="container">
             <h3>Loading...</h3>
@@ -12,21 +13,24 @@ const App = ({data: {loading, user}}) => {
         <div className="container">
             <nav>
                 <div className="nav-wrapper">
-                    {
-                        user? (
-                            <div>
-                                Sign Out
-                            </div>
-                        ) : (
-                            <div>
-                                Sign In
-                            </div>
-                        )
-                    }
+                    <ul className="right">
+                        {
+                            user ? (
+                                <div onClick={mutate}>
+                                    Sign Out
+                                </div>
+                            ) : (
+                                <div>
+                                    <li>Sign Up</li>
+                                    <li>Sign In</li>
+                                </div>
+                            )
+                        }
+                    </ul>
                 </div>
             </nav>
         </div>
     );
 };
 
-export default graphql(CurrentUser)(App);
+export default graphql(SignOut)(graphql(CurrentUser)(App));

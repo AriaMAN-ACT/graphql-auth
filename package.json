@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link-http": "^1.5.17",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-preset-env": "^1.1.8",
@@ -20,11 +23,13 @@
     "express-graphql": "^0.9.0",
     "express-session": "^1.17.1",
     "graphql": "^15.1.0",
+    "graphql-tag": "^2.10.3",
     "html-webpack-plugin": "^2.26.0",
     "mongoose": "^5.9.18",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
     "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.9.0"

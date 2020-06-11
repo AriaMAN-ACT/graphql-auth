@@ -10,9 +10,21 @@ const App = ({data: {loading, user}}) => {
         </div>
     ) : (
         <div className="container">
-            {
-                user ? 'You are signed in.' : 'You are not signed in.'
-            }
+            <nav>
+                <div className="nav-wrapper">
+                    {
+                        user? (
+                            <div>
+                                Sign Out
+                            </div>
+                        ) : (
+                            <div>
+                                Sign In
+                            </div>
+                        )
+                    }
+                </div>
+            </nav>
         </div>
     );
 };
